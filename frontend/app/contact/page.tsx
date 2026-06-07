@@ -16,7 +16,6 @@ import {
   ChevronDown,
   ArrowRight,
   Linkedin,
-  Instagram,
   Youtube,
   CheckCircle2,
   ClipboardList,
@@ -362,7 +361,7 @@ export default function ContactPage() {
             <p className="text-orange-500 text-[10px] tracking-widest uppercase leading-none mt-0.5 mb-4">You Design. We Build.</p>
             <p className="text-gray-500 text-xs leading-relaxed mb-5">Architectural excellence through structural integrity since 1994.</p>
             <div className="flex gap-3">
-              {[Linkedin, Instagram, Youtube].map((Icon, i) => (
+              {[Linkedin, Youtube].map((Icon, i) => (
                 <a key={i} href="#" className="w-8 h-8 border border-white/20 rounded flex items-center justify-center text-gray-400 hover:text-white hover:border-white transition-colors">
                   <Icon size={13} />
                 </a>
