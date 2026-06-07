@@ -4,12 +4,15 @@ import dotenv from 'dotenv';
 import mongoose from 'mongoose';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import dns from 'node:dns';
 import authRoutes from './routes/auth.js';
 import authMiddleware from './middleware/auth.js';
 import { buildEmotionContext, logInsights } from './utils/emotionAnalyzer.js';
 import { getGithubInsights, buildGithubContext } from './utils/githubInsights.js';
 import User from './models/User.js';
-// Using native fetch in Node 18+
+
+// 💉 DNS Fix: Use public DNS to resolve MongoDB SRV records if local DNS fails
+dns.setServers(['8.8.8.8', '1.1.1.1']);
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 dotenv.config({ path: path.join(__dirname, '.env') });
