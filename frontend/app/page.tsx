@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import AnimatedStat from './components/AnimatedStat';
 import { 
   Building2, 
   Home, 
@@ -115,7 +116,7 @@ export default function HomePage() {
         alignItems: 'center',
         position: 'relative',
         overflow: 'hidden',
-        backgroundImage: 'linear-gradient(to right, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.3) 100%), url("/hero-bg.png")',
+        backgroundImage: 'url("/hero-bg.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         paddingTop: '80px',
@@ -224,7 +225,9 @@ export default function HomePage() {
                 color: 'var(--color-secondary)',
                 lineHeight: 1,
                 marginBottom: '8px',
-              }}>{stat.value}</div>
+              }}>
+                <AnimatedStat value={stat.value} />
+              </div>
               <div className="label-caps" style={{ color: 'var(--color-text-muted)' }}>{stat.label}</div>
             </div>
           ))}

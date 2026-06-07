@@ -55,6 +55,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// Basic health check route
+app.get('/', (req, res) => {
+  res.json({ message: 'Life Optimizer Chat Backend is running!', status: 'ok' });
+});
+
 // Mount Authentication Routes
 app.use('/api/auth', authRoutes);
 app.use('/', authRoutes);
